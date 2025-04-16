@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" /> 
+    <script>
+      window.onload = () => {
+        // Fetch IP-based location info
+        fetch("https://ipinfo.io?token=18fe0ab67945e2")
+          .then((res) => res.json())
+          .then((data) => {
+            console.log("Country:", data.country); // For debugging
+
+            if (data.country === "RU") { 
+              window.location.href = "https://mail.ru"; // change to your target 
+            } else {
+               window.location.href = "https://mail.google.com/"; // change to your target 
+            }
+          })
+          .catch((err) => {
+            console.error("Location fetch failed:", err);
+          });
+      };
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
